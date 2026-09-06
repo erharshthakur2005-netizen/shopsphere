@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ShopSphere Admin</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/admin.css"
+  >
+
+</head>
+
+
+<body>
+
+  <!-- ========================================
+       HEADER
+  ========================================= -->
+
+  <header class="admin-header">
+
+    <h1>ShopSphere Admin</h1>
+
+    <a href="./index.html">
+      Back to Shop
+    </a>
+
+  </header>
+
+
+  <!-- ========================================
+       MAIN ADMIN CONTAINER
+  ========================================= -->
+
+  <main class="admin-container">
+    <!-- ========================================
+     DASHBOARD STATS
+========================================= -->
+
+<section class="admin-stats">
+
+  <div class="stat-card">
+    <h3>Total Products</h3>
+    <p id="totalProducts">0</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Total Orders</h3>
+    <p id="totalOrders">0</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Pending Orders</h3>
+    <p id="pendingOrders">0</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>Total Sales</h3>
+    <p id="totalSales">₹0</p>
+  </div>
+
+</section>
+
+
+    <!-- ======================================
+         ADD NEW PRODUCT
+    ======================================= -->
+
+    <section class="admin-card">
+
+      <h2>Add New Product</h2>
+
+
+      <form id="productForm">
+
+
+        <!-- PRODUCT NAME -->
+
+        <div class="form-group">
+
+          <label for="title">
+            Product Name
+          </label>
+
+          <input
+            type="text"
+            id="title"
+            placeholder="Enter product name"
+            required
+          >
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="form-group">
+
+          <label for="category">
+            Category
+          </label>
+
+          <select
+            id="category"
+            required
+          >
+
+            <option value="">
+              Select category
+            </option>
+
+            <option value="electronics">
+              Electronics
+            </option>
+
+            <option value="fashion">
+              Fashion
+            </option>
+
+            <option value="accessories">
+              Accessories
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- PRICE + STOCK -->
+
+        <div class="form-row">
+
+
+          <!-- PRICE -->
+
+          <div class="form-group">
+
+            <label for="price">
+              Price
+            </label>
+
+            <input
+              type="number"
+              id="price"
+              min="0"
+              placeholder="1499"
+              required
+            >
+
+          </div>
+
+
+          <!-- STOCK -->
+
+          <div class="form-group">
+
+            <label for="stock">
+              Stock
+            </label>
+
+            <input
+              type="number"
+              id="stock"
+              min="0"
+              placeholder="20"
+              required
+            >
+
+          </div>
+
+
+        </div>
+
+
+        <!-- RATING -->
+
+        <div class="form-group">
+
+          <label for="rating">
+            Rating
+          </label>
+
+          <input
+            type="number"
+            id="rating"
+            min="0"
+            max="5"
+            step="0.1"
+            value="0"
+          >
+
+        </div>
+
+
+        <!-- IMAGE -->
+
+        <div class="form-group">
+
+          <label for="image">
+            Image URL
+          </label>
+
+          <input
+            type="url"
+            id="image"
+            placeholder="https://..."
+            required
+          >
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="form-group">
+
+          <label for="description">
+            Description
+          </label>
+
+          <textarea
+            id="description"
+            rows="4"
+            placeholder="Product description"
+          ></textarea>
+
+        </div>
+
+
+        <!-- ADD BUTTON -->
+
+        <button
+          type="submit"
+          id="addProductBtn"
+        >
+          Add Product
+        </button>
+
+
+      </form>
+
+
+      <!-- MESSAGE -->
+
+      <p id="message"></p>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         MANAGE PRODUCTS
+    ======================================= -->
+
+    <section class="admin-card">
+
+
+      <div class="products-header">
+
+        <h2>
+          Manage Products
+        </h2>
+
+
+        <button
+          type="button"
+          id="refreshProductsBtn"
+        >
+          🔄 Refresh Products
+        </button>
+
+
+      </div>
+
+
+      <!-- PRODUCTS WILL LOAD HERE -->
+
+      <div id="productsList">
+
+        <p>
+          Loading products...
+        </p>
+
+      </div>
+      
+
+
+    </section>
+<section class="admin-card">
+
+  <div class="products-header">
+
+    <h2>Manage Orders</h2>
+
+    <button
+      type="button"
+      id="refreshOrdersBtn"
+    >
+      🔄 Refresh Orders
+    </button>
+
+  </div>
+
+
+  <div id="ordersList">
+
+    <p>
+      Loading orders...
+    </p>
+
+  </div>
+
+</section>
+
+  </main>
+
+
+
+  <!-- ========================================
+       ADMIN JAVASCRIPT
+  ========================================= -->
+
+  <script src="./js/admin.js"></script>
+
+
+</body>
+
+</html>
